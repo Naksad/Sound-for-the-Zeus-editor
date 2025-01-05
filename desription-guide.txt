@@ -1,0 +1,28 @@
+Before that you need to create a folder ‘sounds’, which will contain the required sound in ‘ogg’ format. The file ‘description.ext’ should be located in the script folder.
+
+class CfgSFX { // Assign a sound effect class
+	class AlarmSfx {
+		sounds[] = {"Alarm"};
+		name = ALARM; // Display in the tab
+		Alarm[] = {"sounds\trevoga.ogg", 1.0, 1, 1000, 1, 0.0, 0.0, 0.0}; // Characterisation of the sound effect
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0}; // Obligatory command
+	};
+};
+class CfgSounds {
+    sounds[] = {Alarm};
+
+    class Alarm {
+        name = "Alarm"; // The name displayed in Zeus
+        sound[] = {"sounds\trevoga.ogg", 1.0, 1, 1000}; // File path, volume, pitch, range
+        titles[] = {}; // No subtitles
+    };
+};
+
+class CfgPatches {
+    class MyModSounds {
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = 1.0;
+        requiredAddons[] = {};
+    };
+};
